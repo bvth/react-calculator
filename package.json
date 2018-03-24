@@ -2,6 +2,7 @@
   "name": "react-calculator",
   "version": "0.1.0",
   "private": true,
+  "main": "src/electron-starter.js",
   "dependencies": {
     "css-loader": "^0.28.9",
     "lodash": "^4.17.5",
@@ -15,12 +16,17 @@
     "start": "webpack-dev-server",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-dev": "set ELECTRON_START_URL=http://localhost:8080 && electron .",
+    "dev": "nf start -p 8080"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1"
+    "babel-preset-react": "^6.24.1",
+    "electron": "^1.8.4",
+    "foreman": "^2.0.0"
   }
 }
