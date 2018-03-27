@@ -1,9 +1,11 @@
 import React from 'react';
 
+import '../style/display.scss';
+
 class Display extends React.Component{
     render(){
         return(
-            <div className="empty"></div>
+            <div className="display"></div>
         )
     }
 }

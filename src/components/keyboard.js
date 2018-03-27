@@ -4,11 +4,24 @@ import times from 'lodash/times';
 
 class Keyboard extends React.Component{
     render(){
+        const renderButton =(i) =>{
+           switch(i){
+                case 10:
+                    return <Button key={i} value={"+/-"} type="sign"/>
+                    break;
+                case 11:
+                    return <Button key={i} value={"."} type="sign"/>;
+                    break;
+                default: 
+                    return <Button key={i} value={i} type="number"/>;
+                    break;
+           }
+        }
         return(
             <div className="keyboard">
                 <div className="num_pad">
-                    {times(10,(i)=>
-                        <Button key={i} value={i} type="number"/>
+                    {times(12,(i)=>
+                        renderButton(i)
                     )}
                 </div>
                 <div className="op_pad">
