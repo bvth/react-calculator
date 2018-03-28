@@ -1,28 +1,21 @@
 import React from 'react';
 import Button from './button';
 import times from 'lodash/times';
+import '../style/keyboard.scss';
 
 class Keyboard extends React.Component{
     render(){
-        const renderButton =(i) =>{
-           switch(i){
-                case 10:
-                    return <Button key={i} value={"+/-"} type="sign"/>
-                    break;
-                case 11:
-                    return <Button key={i} value={"."} type="sign"/>;
-                    break;
-                default: 
-                    return <Button key={i} value={i} type="number"/>;
-                    break;
-           }
-        }
         return(
             <div className="keyboard">
-                <div className="num_pad">
-                    {times(12,(i)=>
-                        renderButton(i)
+                {/* <div className="num_pad">
+                    <Button value={"CE"} type="sign"/>
+                    <Button value={"C"} type="sign"/>
+                    <Button value={"<="} type="sign"/>
+                    {times(10,(i)=>
+                        <Button key={i} value={i} type="number"/>
                     )}
+                    <Button value={"."} type="sign"/>
+                    <Button value={"+/-"} type="sign"/>
                 </div>
                 <div className="op_pad">
                     <Button value={"+"} type="operator"/>
@@ -30,7 +23,26 @@ class Keyboard extends React.Component{
                     <Button value={"*"} type="operator"/>
                     <Button value={"/"} type="operator"/>
                     <Button value={"="} type="operator"/>
-                </div>
+                </div> */}
+                    <Button value={"+"} type="operator"/>
+                    <Button value={"-"} type="operator"/>
+                    <Button value={"*"} type="operator"/>
+                    <Button value={"/"} type="operator"/>
+                    <Button value={"="} type="operator"/>
+                    <div className="editpad">
+                        <Button value={"CE"} type="edit"/>
+                        <Button value={"C"} type="edit"/>
+                        <Button value={"<="} type="edit"/>
+                    </div>
+                    <div className="numpad">
+                    {times(10,(i)=>
+                        <Button key={i} value={i} type="number"/>
+                    )}
+                    
+                    <Button value={"+/-"} type="sign" style="sign1"/>
+                    <Button value={"."} type="sign" style="sign2"/>
+                    </div>
+
             </div>
         )
     }

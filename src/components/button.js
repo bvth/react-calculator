@@ -1,5 +1,5 @@
 import React from 'react';
-import '../style/button.scss';
+
 
 class Button extends React.Component{
     constructor(){
@@ -13,7 +13,7 @@ class Button extends React.Component{
 
     render(){
         return(
-            <div className={"button button_"+this.props.value} onClick={this.Click}>{this.props.value}</div>   
+            <div className={"button button_"+this.props.value+" "+this.props.type} onClick={this.Click}  style={{"gridArea":this.props.style}}>{this.props.value}</div>
         )
     }
 }
