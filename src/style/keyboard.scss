@@ -3,62 +3,34 @@
     display: grid;
     grid-template-areas: "edit edit edit op" "num num num op" "num num num op" "num num num op" "num num num op";
     grid-template-columns: 25%;
-    // grid-template-rows: 20%;
-
-    // .button{
-    //     display: inline-block;
-    //     height: 20%;
-    //     margin: 0.5%;
-    //     border: 1px solid #d4d4d4;
-    //     background: #d4d4d4;
-    //     font-size: 20px;
-    //     text-align: center;
-    //     &:hover{
-    //         cursor: pointer;
-    //         background: #bebebe;
-    //         border-color: #bebebe;
-    //     }
-    //     &.number, &.sign{
-    //         width: 31.9%;
-    //     }
-    //     &.operator{
-    //         width: 100%;
-    //     }
-    // }
-    // .num_pad{
-    //     width: 80%;
-    //     height: 100%;
-    //     display: inline-block;
-    //     vertical-align: top;
-    // }
-    // .op_pad{
-    //     width: 20%;
-    //     height: 100%;
-    //     display: inline-block;
-    // }
-    .button{
-        // display: inline-block;
-        // height: 20%;
-        // width: 25%;
-        // margin: 0.5%;
-
-        border: 1px solid #d4d4d4;
-        background: #d4d4d4;
-        font-size: 20px;
-        text-align: center;
-        &.operator{
-            grid-column: 4;
-        }
+    grid-column-gap: 0.5%;
+    grid-row-gap: 1%;
+    .operator{
+        grid-column: 4;
     }
     .numpad{
         grid-area: num;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: ". . ." ". . ." ". . ." "sign1 . sign2";
+        grid-column-gap: inherit;
+        grid-row-gap: inherit;
+        .number{
+            background: rgba(239, 239, 239, 0.94);
+        }
     }
     .editpad{
         grid-area: edit;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: inherit;
+        grid-row-gap: inherit;
     }
+}
+.button{
+    // border: 1px solid #d4d4d4;
+    background:rgb(220, 220, 220);
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
 }
