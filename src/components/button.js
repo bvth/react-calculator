@@ -5,12 +5,13 @@ class Button extends React.Component{
     constructor(){
         super();
         this.Click = this.inputNumber.bind(this);
-        this.Over = this.mouseMove.bind(this);
+        this.Move = this.mouseMove.bind(this);
         this.Clear = this.clearBackground.bind(this);
     }
 
-    inputNumber(){
+    inputNumber(e){
         console.log(this.props.value);
+        console.log(e.target.querySelector('div'));
     }
 
     mouseMove(e){
@@ -19,14 +20,20 @@ class Button extends React.Component{
         let left = el.getBoundingClientRect().left; //get offset left
 
 
-        let bgColor;
+        let bgColor; //background color
+        let bColor; //border color
+
         if(el.getAttribute("class").includes("operator")){
             bgColor= "#c7efe5,#64d3b7";
+            bColor= "#64d3b7,#c7efe5";
         }
         else{
-            bgColor= "#ffffff,#9a9a9a"
+            bgColor= "#d6d6d6,#9a9a9a";
+            bColor= "#9a9a9a,#d6d6d6";
         }
-        el.setAttribute("style","background: radial-gradient(at "+(e.clientX-left)+"px "+(e.clientY-top)+"px,"+bgColor+")!important");
+        el.setAttribute("style","background: radial-gradient(at "+(e.clientX-left)+"px "+(e.clientY-top)+"px,"+bgColor+")!important; border: 1px solid; border-image: radial-gradient(at "+(e.clientX-left)+"px "+(e.clientY-top)+"px,"+bColor+"); border-image-slice: 30%;");
+        
+        
     }
 
     clearBackground(e){
@@ -37,8 +44,8 @@ class Button extends React.Component{
     render(){
         return(
             <div className={"button button_"+this.props.value+" "+this.props.type} 
-                    onClick={this.Over}  
-                    onMouseMove={this.Over}
+                    onClick={this.Click}  
+                    onMouseMove={this.Move}
                     onMouseOut={this.Clear}
                     style={{"gridArea":this.props.style}} >{this.props.value}</div>
         )
