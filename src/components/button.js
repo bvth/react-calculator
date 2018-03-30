@@ -43,7 +43,7 @@ class Button extends React.Component{
                 bgColor= "#d6d6d6,#9a9a9a";
                 bColor= "#9a9a9a,#d6d6d6";
             }
-            el.setAttribute("style","background: radial-gradient(at "+(e.clientX-left)+"px "+(e.clientY-top)+"px,"+bgColor+")!important;" );
+            el.setAttribute("style","background: radial-gradient(at "+(e.clientX-left)+"px "+(e.clientY-top)+"px,"+bgColor+")!important;border-image: radial-gradient(at "+(e.clientX-left)+"px "+(e.clientY-top)+"px,"+bColor+")!important" );
         }
         
         
@@ -52,6 +52,7 @@ class Button extends React.Component{
     clearBackground(e){
         let el = e.target;
         el.style.background="";
+        el.style.border="";
     }
 
     render(){

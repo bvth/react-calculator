@@ -3,15 +3,29 @@
     align-items: center;
     justify-content: center;
     background:rgb(220, 220, 220);
+    border: 2px solid rgb(220, 220, 220);
     font-size: 20px;
     text-align: center;
     cursor: pointer;
-    // margin: 1%;
-    &.button_po_ne{
+    margin: 3px;
+    box-sizing: border-box;
+        &.button_po_ne{
         grid-area: sign1!important;
     }
     &.button_separator{
         grid-area: sign2!important;
-        font-family: font-awesome;
+    }
+    &.number{
+        background: rgba(239, 239, 239, 0.94);
+        border: 2px solid rgba(239, 239, 239, 0.94);
+    }
+    &.number,&.sign{
+        flex: 1 0 30%;
+    }
+    &.edit{
+        flex: 1 0 30%;
+    }
+    &.operator{
+        flex:1 0 auto;
     }
 }
