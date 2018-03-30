@@ -3,15 +3,16 @@
     display: grid;
     grid-template-areas: "edit edit edit op" "num num num op" "num num num op" "num num num op" "num num num op";
     grid-template-columns: 25%;
-    grid-column-gap: 0.5%;
-    grid-row-gap: 1%;
+    .oppad{
+        grid-area: op;
+        display: grid;
+        grid-template-rows: repeat(5,1fr);
+    }
     .numpad{
         grid-area: num;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: ". . ." ". . ." ". . ." "sign1 . sign2";
-        grid-column-gap: inherit;
-        grid-row-gap: inherit;
         .number{
             background: rgba(239, 239, 239, 0.94);
         }
@@ -20,7 +21,5 @@
         grid-area: edit;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-column-gap: inherit;
-        grid-row-gap: inherit;
     }
 }

@@ -34,15 +34,17 @@ class Button extends React.Component{
         let bgColor; //background color
         let bColor; //border color
 
-        if(el.getAttribute("class").includes("operator")){
-            bgColor= "#c7efe5,#64d3b7";
-            bColor= "#64d3b7,#c7efe5";
+        if(el.hasAttribute("class")){
+            if(el.getAttribute("class").includes("operator")){
+                bgColor= "#c7efe5,#64d3b7";
+                bColor= "#64d3b7,#c7efe5";
+            }
+            else{
+                bgColor= "#d6d6d6,#9a9a9a";
+                bColor= "#9a9a9a,#d6d6d6";
+            }
+            el.setAttribute("style","background: radial-gradient(at "+(e.clientX-left)+"px "+(e.clientY-top)+"px,"+bgColor+")!important;" );
         }
-        else{
-            bgColor= "#d6d6d6,#9a9a9a";
-            bColor= "#9a9a9a,#d6d6d6";
-        }
-        el.setAttribute("style","background: radial-gradient(at "+(e.clientX-left)+"px "+(e.clientY-top)+"px,"+bgColor+")!important;" );
         
         
     }
@@ -57,7 +59,7 @@ class Button extends React.Component{
             <div className={"button button_"+(this.props.name || this.props.value)+" "+this.props.type} 
                     onClick={this.Click}  
                     onMouseMove={this.Move}
-                    onMouseOut={this.Clear}
+                    onMouseLeave={this.Clear}
                     style={{"gridArea":this.props.style}} >{this.props.name=="delete" ? <TiBackspaceOutline/> : convertUnicode(this.props.value)}</div>
         )
     }
