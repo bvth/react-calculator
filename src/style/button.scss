@@ -11,5 +11,9 @@
     }
     &.button_separator{
         grid-area: sign2!important;
+        font-family: font-awesome;
+    }
+    &.operator{
+        grid-column: 4;
     }
 }

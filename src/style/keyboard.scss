@@ -5,9 +5,6 @@
     grid-template-columns: 25%;
     grid-column-gap: 0.5%;
     grid-row-gap: 1%;
-    .operator{
-        grid-column: 4;
-    }
     .numpad{
         grid-area: num;
         display: grid;

@@ -1,6 +1,17 @@
 import React from 'react';
+import TiBackspaceOutline from "react-icons/lib/ti/backspace-outline";
 
 import "../style/button.scss";
+
+function convertUnicode(input) {
+    if(typeof input == "string" && input.includes("\\")){
+        return input.replace(/\\u(\w\w\w\w)/g,function(a,b) {
+        var charcode = parseInt(b,16);
+        return String.fromCharCode(charcode);
+        });
+    }
+    else return input;
+  }
 
 class Button extends React.Component{
     constructor(){
@@ -11,8 +22,7 @@ class Button extends React.Component{
     }
 
     inputNumber(e){
-        console.log(this.props.value);
-        console.log(e.target.querySelector('div'));
+
     }
 
     mouseMove(e){
@@ -48,7 +58,7 @@ class Button extends React.Component{
                     onClick={this.Click}  
                     onMouseMove={this.Move}
                     onMouseOut={this.Clear}
-                    style={{"gridArea":this.props.style}} >{this.props.value}</div>
+                    style={{"gridArea":this.props.style}} >{this.props.name=="delete" ? <TiBackspaceOutline/> : convertUnicode(this.props.value)}</div>
         )
     }
 }
