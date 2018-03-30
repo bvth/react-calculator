@@ -22,7 +22,7 @@ class Button extends React.Component{
     }
 
     inputNumber(e){
-
+        console.log(this.props.value)
     }
 
     mouseMove(e){
@@ -51,7 +51,7 @@ class Button extends React.Component{
 
     clearBackground(e){
         let el = e.target;
-        el.removeAttribute("style");
+        el.style.background="";
     }
 
     render(){
@@ -60,7 +60,8 @@ class Button extends React.Component{
                     onClick={this.Click}  
                     onMouseMove={this.Move}
                     onMouseLeave={this.Clear}
-                    style={{"gridArea":this.props.style}} >{this.props.name=="delete" ? <TiBackspaceOutline/> : convertUnicode(this.props.value)}</div>
+                    style={{"order":this.props.order}}
+                     >{this.props.name=="delete" ? <TiBackspaceOutline/> : convertUnicode(this.props.value)}</div>
         )
     }
 }

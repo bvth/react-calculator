@@ -37,12 +37,13 @@ class Keyboard extends React.Component{
                     <Button value={""} name={"delete"} type="edit"/>
                 </div>
                 <div className="numpad">
-                    {times(10,(i)=>
-                        <Button key={i} value={i} type="number"/>
+                    {times(9,(i)=>
+                        <Button key={i} value={9-i} type="number" />
                     )}
                     
+                    <Button value={"."} name={"separator"} type="sign" style="sign2"/>                    
+                    <Button value={0} type="number" />                    
                     <Button value={"\u00B1"} name={"po_ne"} type="sign" style="sign1"/>
-                    <Button value={"."} name={"separator"} type="sign" style="sign2"/>
                 </div>
             </div>
         )

@@ -6,20 +6,26 @@
     .oppad{
         grid-area: op;
         display: grid;
-        grid-template-rows: repeat(5,1fr);
+        // grid-template-rows: repeat(5,1fr);
+        grid-auto-flow: row;
     }
     .numpad{
         grid-area: num;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas: ". . ." ". . ." ". . ." "sign1 . sign2";
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
         .number{
             background: rgba(239, 239, 239, 0.94);
+
+        }
+        .number,.sign{
+            flex: 1 0 30%;
         }
     }
     .editpad{
         grid-area: edit;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        // grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-flow: column;
     }
 }
