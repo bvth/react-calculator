@@ -1,5 +1,6 @@
 import React from 'react';
 
+import "../style/button.scss";
 
 class Button extends React.Component{
     constructor(){
@@ -31,7 +32,7 @@ class Button extends React.Component{
             bgColor= "#d6d6d6,#9a9a9a";
             bColor= "#9a9a9a,#d6d6d6";
         }
-        el.setAttribute("style","background: radial-gradient(at "+(e.clientX-left)+"px "+(e.clientY-top)+"px,"+bgColor+")!important; border: 1px solid; border-image: radial-gradient(at "+(e.clientX-left)+"px "+(e.clientY-top)+"px,"+bColor+"); border-image-slice: 30%;");
+        el.setAttribute("style","background: radial-gradient(at "+(e.clientX-left)+"px "+(e.clientY-top)+"px,"+bgColor+")!important;" );
         
         
     }
@@ -43,7 +44,7 @@ class Button extends React.Component{
 
     render(){
         return(
-            <div className={"button button_"+this.props.value+" "+this.props.type} 
+            <div className={"button button_"+(this.props.name || this.props.value)+" "+this.props.type} 
                     onClick={this.Click}  
                     onMouseMove={this.Move}
                     onMouseOut={this.Clear}

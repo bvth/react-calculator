@@ -24,23 +24,23 @@ class Keyboard extends React.Component{
                     <Button value={"/"} type="operator"/>
                     <Button value={"="} type="operator"/>
                 </div> */}
-                    <Button value={"+"} type="operator"/>
-                    <Button value={"-"} type="operator"/>
-                    <Button value={"*"} type="operator"/>
-                    <Button value={"/"} type="operator"/>
-                    <Button value={"="} type="operator"/>
+                    <Button value={"+"} name={"plus"} type="operator"/>
+                    <Button value={"-"} name={"minus"}type="operator"/>
+                    <Button value={"*"} name={"multiply"} type="operator"/>
+                    <Button value={"/"} name={"divide"} type="operator"/>
+                    <Button value={"="} name={"equal"} type="operator"/>
                     <div className="editpad">
                         <Button value={"CE"} type="edit"/>
                         <Button value={"C"} type="edit"/>
-                        <Button value={"<="} type="edit"/>
+                        <Button value={"<="} name={"delete"} type="edit"/>
                     </div>
                     <div className="numpad">
                     {times(10,(i)=>
                         <Button key={i} value={i} type="number"/>
                     )}
                     
-                    <Button value={"+/-"} type="sign" style="sign1"/>
-                    <Button value={"."} type="sign" style="sign2"/>
+                    <Button value={"+/-"} name={"po_ne"} type="sign" style="sign1"/>
+                    <Button value={"."} name={"separator"} type="sign" style="sign2"/>
                     </div>
 
             </div>

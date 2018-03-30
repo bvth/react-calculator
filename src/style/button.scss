@@ -1,0 +1,15 @@
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:rgb(220, 220, 220);
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    &.button_po_ne{
+        grid-area: sign1!important;
+    }
+    &.button_separator{
+        grid-area: sign2!important;
+    }
+}
