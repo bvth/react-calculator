@@ -21,8 +21,8 @@ class Button extends React.Component{
         this.Clear = this.clearStyle.bind(this);
     }
 
-    inputNumber(e){
-        
+    inputNumber(){
+        console.log("from button: "+this.props.value);
     }
     
     mouseMove(e){
