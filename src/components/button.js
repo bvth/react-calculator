@@ -18,13 +18,13 @@ class Button extends React.Component{
         super();
         this.Click = this.inputNumber.bind(this);
         this.Move = this.mouseMove.bind(this);
-        this.Clear = this.clearBackground.bind(this);
+        this.Clear = this.clearStyle.bind(this);
     }
 
     inputNumber(e){
-        console.log(this.props.value)
+        
     }
-
+    
     mouseMove(e){
         let el = e.target; //select current element
         let top = el.getBoundingClientRect().top; //get offset top
@@ -45,11 +45,9 @@ class Button extends React.Component{
             }
             el.setAttribute("style","background: radial-gradient(at "+(e.clientX-left)+"px "+(e.clientY-top)+"px,"+bgColor+")!important;border-image: radial-gradient(at "+(e.clientX-left)+"px "+(e.clientY-top)+"px,"+bColor+")!important" );
         }
-        
-        
     }
 
-    clearBackground(e){
+    clearStyle(e){
         let el = e.target;
         el.style.background="";
         el.style.border="";

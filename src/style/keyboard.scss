@@ -7,8 +7,6 @@
         grid-area: op;
         display: flex;
         flex-direction: column;
-        // grid-template-rows: repeat(5,1fr);
-        // grid-auto-flow: row;
     }
     .numpad{
         grid-area: num;
@@ -19,8 +17,6 @@
     .editpad{
         grid-area: edit;
         display: flex;
-        // grid-template-columns: 1fr 1fr 1fr;
-        // grid-auto-flow: column;
         flex-direction: row;
     }
 }
