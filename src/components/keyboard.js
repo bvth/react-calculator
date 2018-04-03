@@ -7,23 +7,6 @@ class Keyboard extends React.Component{
     render(){
         return(
             <div className="keyboard">
-                {/* <div className="num_pad">
-                    <Button value={"CE"} type="sign"/>
-                    <Button value={"C"} type="sign"/>
-                    <Button value={"<="} type="sign"/>
-                    {times(10,(i)=>
-                        <Button key={i} value={i} type="number"/>
-                    )}
-                    <Button value={"."} type="sign"/>
-                    <Button value={"+/-"} type="sign"/>
-                </div>
-                <div className="op_pad">
-                    <Button value={"+"} type="operator"/>
-                    <Button value={"-"} type="operator"/>
-                    <Button value={"*"} type="operator"/>
-                    <Button value={"/"} type="operator"/>
-                    <Button value={"="} type="operator"/>
-                </div> */}
                 <div className="oppad">
                     <Button value={"+"} name={"plus"} type="operator"/>
                     <Button value={"-"} name={"minus"}type="operator"/>
