@@ -5,15 +5,13 @@ module.exports = {
         filename: "./public/bundle.js",
     },
     module : {
-        loaders: [
+        rules: [
             {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                loaders: ['babel-loader?presets[]=react,presets[]=es2015']
+                loader: "babel-loader"
             },
             {
                 test: /\.sass$/,
-                loader: "style-loader!css-loader!sass?indentedSyntax"
+                loader: "style-loader!css-loader!sass-loader?indentedSyntax"
             },
             {
                 test: /\.scss$/,
