@@ -14,6 +14,9 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
+    webPreferences: {
+      nodeIntegration: false
+    },
     width: 800, 
     minWidth: 450,
     height: 600,   
@@ -22,7 +25,7 @@ function createWindow () {
 
   // and load the index.html of the app.
   const startUrl = process.env.ELECTRON_START_URL || url.format({
-    pathname: path.join(__dirname, './index.html'),
+    pathname: path.join(__dirname, '../public/index.html'),
     protocol: 'file:',
     slashes: true
 });
